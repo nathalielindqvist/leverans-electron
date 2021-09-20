@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/nathalielindqvist/leverans-electron/issues"
   },
-  "homepage": "https://github.com/nathalielindqvist/leverans-electron#readme"
+  "homepage": "https://github.com/nathalielindqvist/leverans-electron#readme",
+  "devDependencies": {
+    "electron": "^14.0.1"
+  }
 }
