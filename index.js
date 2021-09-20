@@ -7,6 +7,12 @@ function createWindow() {
   });
 
   mainWindow.loadURL('https://notflix.clientsmile.se/');
+
+  app.on('activate', function () {
+    if (mainWindow === null) {
+      createWindow()
+    }
+  });
 }
 
 app.whenReady().then(createWindow);
