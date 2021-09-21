@@ -88,16 +88,13 @@
     ]
   },
   {
-    "label": "Djur",
+    "label": "Wishlist",
     "submenu": [
       {
-        "label": "Apa"
+        "label": "Download wishlist as file"
       },
       {
-        "label": "Elefant"
-      },
-      {
-        "label": "Krokodil"
+        "label": "Upload wishlist to cart"
       }
     ]
   },
