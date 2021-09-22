@@ -20,5 +20,8 @@
   "homepage": "https://github.com/nathalielindqvist/leverans-electron#readme",
   "devDependencies": {
     "electron": "^14.0.1"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.1"
   }
 }
