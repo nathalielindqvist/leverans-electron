@@ -19,7 +19,7 @@ function createWindow() {
       nativeWindowOpen: true,
       nodeIntegration: true,
       contextIsolation: false,
-      // preload: path.join(app.getAppPath(), 'preload.js')
+      preload: path.join(app.getAppPath(), 'test.js')
     }
   });
 
