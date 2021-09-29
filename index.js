@@ -1,5 +1,7 @@
 const { app, BrowserWindow, Menu } = require('electron');
 
+const fs = require('fs');
+
 const remoteMain = require('@electron/remote/main');
 remoteMain.initialize();
 
@@ -7,15 +9,15 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1000,
+    height: 800,
     webPreferences: {
       nativeWindowOpen: true,
       nodeIntegration: true,
-      contextIsolation: false
+      contextIsolation: false,
+
     }
   });
-
 
   remoteMain.enable(mainWindow.webContents);
 
@@ -26,7 +28,6 @@ function createWindow() {
   mainWindow.on('closed', function () {
     mainWindow = null
   })
-
 }
 
 function createMenu() {
@@ -56,19 +57,9 @@ function createMenu() {
   Menu.setApplicationMenu(menu);
 }
 
-let menuEvents = {
-  'Reload': () => console.log('Reload!'),
-  'Learn more': () => console.log('Learn more'),
-  'Toggle Developer Tools': (item, focusedWindow) => {
-    console.log('Toggle Developer Tools');
-    if (focusedWindow) {
-      focusedWindow.webContents.toggleDevTools();
-    }
-  }
-};
+let menuEvents = {};
 
 function menuClickHandler(menuItem) {
-  console.log('You have chosen the menu item', menuItem.label);
 
   mainWindow.webContents.send('menuChoice', menuItem.label);
 
